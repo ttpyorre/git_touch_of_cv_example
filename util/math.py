@@ -14,7 +14,7 @@ def conv(fil, ker):
     width = ker_w - fil_w + 1
 
     conv_mat = np.zeros((width, height))
-    for w, h in product(range(width), range(height))
+    for w, h in product(range(width), range(height)):
         ker_c = ker[w:(w+3), h:(h+3)]
         conv_mat[w][h] = np.sum(np.multiply(fil, ker_c))
 
