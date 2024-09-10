@@ -20,7 +20,8 @@ for path in edge_img_paths:
     edge_imgs.append(new_img)
 
 output_path = "./output"
-os.mkdir(output_path)
+if not os.isdir(output_path):
+    os.mkdir(output_path)
 for img, path in zip(edge_imgs, edge_img_paths): 
     img = img.convert("RGB")
     path_to_save = output_path + "/" + os.path.basename(path)
